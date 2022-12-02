@@ -1,0 +1,50 @@
+<html>
+
+<body>
+  <h1>
+      display - Atleast 1 relation
+  </h1>
+  <form action="http://localhost:5001/display" method="post">
+    <label for="display">Choose a Relation:</label>
+    <select name="display" id="display">
+      <option value="relation1" name="relation1" > Payments </option>
+      <option value="relation2" name="relation1"> Dealer</option>
+      <option value="relation3" name="relation1"> Customer </option>
+      <option value="relation4" name="relation1"> Car </option>
+      <option value="relation5" name="relation1"> Contracts </option>
+
+    </select>
+    <br><br>
+    <input type="submit" value="Submit">
+  </form>
+
+
+
+
+  <h3>
+    {{ table }}
+  </h3>
+
+  <table> 
+    <tr>
+      {% for colname in columns %}
+      <th>
+        {{ colname }}
+      </th> 
+      {% endfor %}
+    </tr>
+    {% for row in rows %}
+    <tr>
+      {% for data in row %}
+      <td>  
+          {{ data }}
+      </td>
+      {% endfor %}
+    </tr>  
+    {% endfor %}
+
+  </table>
+ </body>
+
+
+</html>
