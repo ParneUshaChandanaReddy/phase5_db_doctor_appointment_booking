@@ -1,2 +1,2 @@
-cx_Oracle
 flask
+cx_Oracle
